@@ -32,8 +32,10 @@ const Login = ({navigation}) => {
     }
     try {
       const result = await auth().signInWithEmailAndPassword(email, password);
-      if (result) {
+      if (result.user) {
         alert('User is Successfully Sign In');
+      } else {
+        alert('invalid Credentials');
       }
       setloading(false);
     } catch (error) {
