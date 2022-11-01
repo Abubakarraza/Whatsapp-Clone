@@ -62,7 +62,6 @@ const SignUp = ({navigation}) => {
   };
   const onUploadImageHandler = async () => {
     await launchImageLibrary({quality: 0.5}, fileObj => {
-      console.log(fileObj);
       const uploadTask = storage()
         .ref()
         .child(`/userprofile/${Date.now()}`)
@@ -82,7 +81,6 @@ const SignUp = ({navigation}) => {
         () => {
           uploadTask.snapshot.ref.getDownloadURL().then(downloadURL => {
             setimage(downloadURL);
-            console.log('downloadURL:', downloadURL);
           });
         },
       );
