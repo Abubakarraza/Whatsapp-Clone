@@ -12,6 +12,8 @@ import {
 } from 'react-native-paper';
 import AuthStack from './src/stack/AuthStack';
 
+
+
 const App = () => {
   const theme = {
     ...DefaultTheme,
